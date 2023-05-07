@@ -7,20 +7,9 @@ const router = Router();
 
 router.get('/', async (req, res) => {
   const products = await productModel.find().lean().exec()
-  res.render('index', { products })
+  res.render('realTimeProducts', { products })
 });
 
-router.get('/:pid', async (req, res) => {
-  const pid = req.params.name
-  res.render('product', { pid })
-});
 
-router.post('/', (req, res ) => {
-  
-})
-
-router.delete('/:pid', (req, res )=> {
- const pid = req.params.name
-})
 
 export default router

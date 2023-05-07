@@ -1,0 +1,48 @@
+<div>
+    <h2>Ingrese el nuevo producto que quiere agregar al stock</h2>
+</div>
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Titulo</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Precio</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">URL de la imagen</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Cantidad disponible</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <button type="submit" class="btn btn-primary">Agregar producto</button>
+</form>
+<div>
+    <h2>Lista de productos disponibles</h2>
+</div>
+{{#each products}}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Precio</th>
+      <th scope="col">URL de la imagen</th>
+      <th scope="col">Cantidad disponible</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ this.code }}</th>
+      <td>{{ this.title }}</td>
+      <td>{{ this.description }}</td>
+      <td>${{ this.price }}</td>
+      <td>{{ this.thumbnail }}</td>
+      <td>{{ this.stock }}</td>
+    </tr>
+  </tbody>
+</table>
+ {{/each}}
