@@ -15,8 +15,9 @@ router.get('/create', (req, res)=>{
 })
 
 router.get('/:pid', async (req, res) => {
-  const pid = req.params.name
-  res.render('product', { pid })
+  const id = req.params.name
+  const product = await productModel.findOne({ id }).lean().exec()
+  res.render('product', { product })
 });
 
 router.post('/', async (req, res ) => {
