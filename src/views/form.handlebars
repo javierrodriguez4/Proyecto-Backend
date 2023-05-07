@@ -1,0 +1,21 @@
+<div>
+    <h2>Ingrese el nuevo producto que quiere agregar al stock</h2>
+</div>
+<form action="/products" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Titulo</label>
+    <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+    <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Precio</label>
+    <input type="text" name="price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">URL de la imagen</label>
+    <input type="text" name="thumbnail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Cantidad disponible</label>
+    <input type="text" name="stock" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <button type="submit" value="Create" class="btn btn-primary">Agregar producto</button>
+</form>

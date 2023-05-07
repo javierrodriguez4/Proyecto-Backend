@@ -10,13 +10,20 @@ router.get('/', async (req, res) => {
   res.render('index', { products })
 });
 
+router.get('/create', (req, res)=>{
+  res.render('form')
+})
+
 router.get('/:pid', async (req, res) => {
   const pid = req.params.name
   res.render('product', { pid })
 });
 
-router.post('/', (req, res ) => {
-  
+router.post('/', async (req, res ) => {
+  const productNew = req.body
+  const productGenerate = new productModel(productNew)
+  await productGenerate.save()
+  res.redirect('/realtimeproducts')
 })
 
 router.delete('/:pid', (req, res )=> {
