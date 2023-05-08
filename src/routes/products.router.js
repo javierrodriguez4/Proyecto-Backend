@@ -1,7 +1,9 @@
 import express from 'express';
 import { Router } from 'express'
 import productModel from '../dao/models/products.model.js';
+import { v4 as uuidv4 } from 'uuid';
 
+const newID = uuidv4().substring(0, 8);
 
 const router = Router();
 
@@ -21,7 +23,8 @@ router.get('/:pid', async (req, res) => {
 });
 
 router.post('/', async (req, res ) => {
-  const productNew = req.body
+  const productForm = req.body
+  const productNew = {...productForm, code: newID}
   const productGenerate = new productModel(productNew)
   await productGenerate.save()
   res.redirect('/realtimeproducts')
